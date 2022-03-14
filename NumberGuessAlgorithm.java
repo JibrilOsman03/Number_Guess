@@ -44,4 +44,8 @@ public class NumberGuessAlgorithm {
             return false;
         }
     }
+
+    public int getGuesses(){
+        return  this.guessesLeft;
+    }
 }
