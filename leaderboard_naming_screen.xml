@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Title_namechanging_screen"
+        android:layout_width="204dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="104dp"
+        android:fontFamily="sans-serif"
+        android:text="Number Guess"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="Username -"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/Title_namechanging_screen"
+        tools:layout_editor_absoluteX="82dp" />
+
+    <EditText
+        android:id="@+id/username_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/username_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/username_text"
+        app:layout_constraintTop_toBottomOf="@+id/username_text" />
+
+    <TextView
+        android:id="@+id/email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email -"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="419dp" />
+
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/email_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/email_text"
+        app:layout_constraintTop_toBottomOf="@+id/email_text" />
+
+    <Button
+        android:id="@+id/Menue_button"
+        android:layout_width="153dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="163dp"
+        android:text="MENU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title_namechanging_screen" />
+</androidx.constraintlayout.widget.ConstraintLayout>
