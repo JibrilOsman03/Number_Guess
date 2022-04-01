@@ -1,15 +1,14 @@
-package com.example.number_guess;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.numberguess;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity
 {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,25 +16,19 @@ public class MainActivity extends AppCompatActivity
 
         configureStartButton();
         configureExitButton();
-        configureSettingsButton();
     }
 
     private void configureStartButton()
     {
-        Button StartButton = findViewById(R.id.StartButton);
-        StartButton.setOnClickListener(view -> startActivity(new Intent(this, DifficultyActivity.class)));
-    }
-
-
-    private void configureSettingsButton()
-    {
-        ImageButton settingsButton = findViewById(R.id.SettingButton);
-        settingsButton.setOnClickListener(view -> startActivity(new Intent(this, SettingsActivity.class)));
+        Button startButton = findViewById(R.id.startButton);
+        startButton.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, DifficultyActivity.class)));
     }
 
     private void configureExitButton()
     {
-        Button ExitButton = findViewById(R.id.ExitButton);
-        ExitButton.setOnClickListener(view -> finish());
+        Button exitButton = findViewById(R.id.exitButton);
+        exitButton.setOnClickListener(view -> finish());
     }
+
+
 }
