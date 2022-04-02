@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class DifficultyActivity extends AppCompatActivity
 {
     public static NumberGuessAlgorithm algorithm;
-    String difficulty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,45 +28,45 @@ public class DifficultyActivity extends AppCompatActivity
     private void configureEasyButton()
     {
         Button easyButton = findViewById(R.id.easyButton);
-        easyButton.setOnClickListener(view -> startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class)));
-
-        difficulty = "Easy";
-
-        NumberGuessAlgorithm algorithm = new NumberGuessAlgorithm(difficulty);
-        System.out.println(algorithm.getGuessesLeft());
+        easyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(android.view.View v){
+                algorithm = new NumberGuessAlgorithm("Easy");
+                startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class));
+            }
+        });
     }
 
     private void configureMediumButton()
     {
         Button mediumButton = findViewById(R.id.mediumButton);
-        mediumButton.setOnClickListener(view -> startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class)));
-
-        difficulty = "Medium";
-
-        NumberGuessAlgorithm algorithm = new NumberGuessAlgorithm(difficulty);
-        System.out.println(algorithm.getGuessesLeft());
+        mediumButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(android.view.View v){
+                algorithm = new NumberGuessAlgorithm("Medium");
+                startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class));
+            }
+        });
     }
 
     private void configureHardButton()
     {
         Button hardButton = findViewById(R.id.hardButton);
-        hardButton.setOnClickListener(view -> startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class)));
-
-        difficulty = "Hard";
-
-        NumberGuessAlgorithm algorithm = new NumberGuessAlgorithm(difficulty);
-        System.out.println(algorithm.getGuessesLeft());
+        hardButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(android.view.View v){
+                algorithm = new NumberGuessAlgorithm("Hard");
+                startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class));
+            }
+        });
     }
 
     private void configureSpeedButton()
     {
         Button speedButton = findViewById(R.id.speedButton);
-        speedButton.setOnClickListener(view -> startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class)));
-
-        difficulty = "Speed";
-
-        NumberGuessAlgorithm algorithm = new NumberGuessAlgorithm(difficulty);
-        System.out.println(algorithm.getGuessesLeft());
+        speedButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(android.view.View v){
+                algorithm = new NumberGuessAlgorithm("Speed");
+                startActivity(new Intent(DifficultyActivity.this, InputRangeActivity.class));
+            }
+        });
     }
 
     private void configureBackButton()
