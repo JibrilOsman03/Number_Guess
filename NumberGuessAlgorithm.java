@@ -6,6 +6,7 @@ public class NumberGuessAlgorithm {
     private int randomNumber;
     private int guessesLeft;
     private boolean isSpeed;
+    private String mode;
 
     //Object initializer
     //return chosen mode as a string
@@ -18,18 +19,22 @@ public class NumberGuessAlgorithm {
         if (mode.equals("Easy")){
             this.guessesLeft = 10;
             this.isSpeed = false;
+            this.mode = "Easy";
         }
         if (mode.equals("Medium")){
             this.guessesLeft = 5;
             this.isSpeed = false;
+            this.mode = "Medium";
         }
         if (mode.equals("Hard")){
             this.guessesLeft = 3;
             this.isSpeed = false;
+            this.mode = "Hard";
         }
         if (mode.equals("Speed")) {
             this.guessesLeft = 100;
             this.isSpeed = true;
+            this.mode = "Speed";
         }
     }
 
@@ -39,7 +44,7 @@ public class NumberGuessAlgorithm {
     }
 
     //This line checks if the user guesses the correct number
-    public boolean userGuess(int guess){
+    public boolean checkUserGuess(int guess){
         if (guess == this.randomNumber) {
             if (!this.isSpeed)
                 this.guessesLeft--;
@@ -57,6 +62,9 @@ public class NumberGuessAlgorithm {
         this.guessesLeft = guessesLeft;
     }
 
+    public String getMode(){
+        return this.mode;
+    }
 
     //This line returns how many guesses are left
     public int getGuessesLeft(){
@@ -67,5 +75,4 @@ public class NumberGuessAlgorithm {
     {
         return Integer.parseInt(s);
     }
-
 }
