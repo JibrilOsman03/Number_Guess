@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class InputRangeActivity extends AppCompatActivity
 {
@@ -15,7 +16,6 @@ public class InputRangeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_range);
-
         configureBackButton();
         configureConfirmButton();
     }
@@ -26,20 +26,19 @@ public class InputRangeActivity extends AppCompatActivity
         BackButton.setOnClickListener(view -> finish());
     }
 
-    public void buttonClicked(View v)
-    {
-        EditText rangeView = findViewById(R.id.rangeBox);
-        String rS = rangeView.getText().toString();
-
-        int rD = NumberGuessAlgorithm.toInt(rS);
-
-        algorithm.guessAmount(rD);
-    }
-
     private void configureConfirmButton()
     {
         Button ConfirmButton = findViewById(R.id.confirmButton);
-        ConfirmButton.setOnClickListener(view -> startActivity(new Intent(InputRangeActivity.this, GuessActivity.class)));
+        ConfirmButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(android.view.View v){
+                EditText range = findViewById(R.id.rangeBox);
+                String ranges = range.getText().toString();
+                int ranged = Integer.parseInt(ranges);
+                if (ranged > 10) {
+                    algorithm.guessAmount(ranged);
+                    startActivity(new Intent(InputRangeActivity.this, GuessActivity.class));
+                }
+            }
+        });
     }
-
 }
